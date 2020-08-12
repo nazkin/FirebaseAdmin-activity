@@ -32,9 +32,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-app.get('/', (req, res)=> {
+app.get('/api', checkAuth, (req, res)=> {
     res.json({
-        message: 'Hello there'
+        message: 'Server says hello there bud :)'
     });
 });
 
